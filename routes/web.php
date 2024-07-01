@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TuristasController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,5 +17,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/turistas', [TuristasController::class, 'index'])->name('turistas');
+Route::get('/prestadores', [TuristasController::class, 'index'])->name('prestadores');
+Route::get('/usuarios', [TuristasController::class, 'index'])->name('usuarios');
+Route::get('/isencoes', [TuristasController::class, 'index'])->name('isencoes');
 
 require __DIR__.'/auth.php';
