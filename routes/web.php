@@ -1,11 +1,21 @@
 <?php
 
+use App\Http\Controllers\AtividadesController;
+use App\Http\Controllers\ComprovantesController;
+use App\Http\Controllers\Configuracoes\ConfigUsuariosController;
+use App\Http\Controllers\Configuracoes\ValoresETaxasController;
+use App\Http\Controllers\ConfiguracoesController;
+use App\Http\Controllers\IsencoesController;
+use App\Http\Controllers\PagamentosController;
+use App\Http\Controllers\PrestadoresController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TuristasController;
+use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\ValidacoesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
 Route::get('/dashboard', function () {
@@ -18,9 +28,18 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/turistas', [TuristasController::class, 'index'])->name('turistas');
-Route::get('/prestadores', [TuristasController::class, 'index'])->name('prestadores');
-Route::get('/usuarios', [TuristasController::class, 'index'])->name('usuarios');
-Route::get('/isencoes', [TuristasController::class, 'index'])->name('isencoes');
+Route::get('/turistas', [TuristasController::class, 'index'])->name('turistas.index');
+Route::get('/prestadores', [PrestadoresController::class, 'index'])->name('prestadores.index');
+Route::get('/usuarios', [UsuariosController::class, 'index'])->name('usuarios.index');
+Route::get('/isencoes', [IsencoesController::class, 'index'])->name('isencoes.index');
+Route::get('/atividades', [AtividadesController::class, 'index'])->name('atividades.index');
+Route::get('/comprovantes', [ComprovantesController::class, 'index'])->name('comprovantes.index');
+Route::get('/config', [ConfiguracoesController::class, 'index'])->name('config.index');
+Route::get('/validacoes', [ValidacoesController::class, 'index'])->name('validacoes.index');
+Route::get('/pagamentos', [PagamentosController::class, 'index'])->name('pagamentos.index');
+
+Route::get('/config/usuarios', [ConfigUsuariosController::class, 'index'])->name('config.usuarios.index');
+Route::get('/config/valoresetaxas', [ValoresETaxasController::class, 'index'])->name('config.valores_e_taxas.index');
+Route::get('/config/valoresetaxas/create', [ValoresETaxasController::class, 'create'])->name('config.valores_e_taxas_create');
 
 require __DIR__.'/auth.php';

@@ -1,4 +1,4 @@
 @extends('templates.template')
-@section('title', 'Turistas')
+@section('title', 'Comprovantes')
 @section('content')
 @endsection
