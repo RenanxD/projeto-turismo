@@ -86,3 +86,51 @@
     height: 18px;
     color: #000000;
 }
+
+.card-body {
+    position: relative;
+}
+
+.btn-custom {
+ display: inline-block;
+ padding: 10px 20px;
+ background-color: #e0e0e0;
+ color: #333;
+ text-align: center;
+ text-decoration: none;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ cursor: pointer;
+ transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #d0d0d0;
+    border-color: #b3b3b3;
+}
+
+.btn-custom:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom:disabled {
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+.btn-edit {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.quadro-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.quadro-item a:hover {
+    text-decoration: none;
+    color: inherit;
+}

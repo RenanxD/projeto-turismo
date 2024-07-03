@@ -40,6 +40,7 @@ Route::get('/pagamentos', [PagamentosController::class, 'index'])->name('pagamen
 
 Route::get('/config/usuarios', [ConfigUsuariosController::class, 'index'])->name('config.usuarios.index');
 Route::get('/config/valoresetaxas', [ValoresETaxasController::class, 'index'])->name('config.valores_e_taxas.index');
-Route::get('/config/valoresetaxas/create', [ValoresETaxasController::class, 'create'])->name('config.valores_e_taxas_create');
+Route::get('/config/valoresetaxas/create', [ValoresETaxasController::class, 'create'])->name('config.modal.valores_e_taxas_create');
+Route::post('/config/valoresetaxas', [ValoresETaxasController::class, 'store'])->name('config.modal.valores_e_taxas.store');
 
 require __DIR__.'/auth.php';

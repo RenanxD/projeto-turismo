@@ -12,11 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cadastro_taxa', function (Blueprint $table) {
-            $table->id('id_taxa');
-            $table->smallInteger('taxa_perm_minima');
-            $table->decimal('taxa_vlr_adicional', 10, 2);
-            $table->smallInteger('taxa_perm_dia_adicional');
-            $table->boolean('taxa_ativa');
+            $table->id();
+            $table->string('descricao');
+            $table->smallInteger('valor');
+            $table->smallInteger('taxa_perm_minima')->default(0);
+            $table->decimal('taxa_vlr_adicional', 10, 2)->default(0.00);
+            $table->smallInteger('taxa_perm_dia_adicional')->default(0);
+            $table->boolean('taxa_ativa')->default(true);
             $table->timestamps();
         });
     }
