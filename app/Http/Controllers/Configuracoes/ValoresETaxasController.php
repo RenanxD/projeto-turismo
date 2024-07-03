@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Configuracoes;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ValidacaoTaxaRequest;
 use App\Models\ValoresETaxas;
 use Illuminate\Http\Request;
 
@@ -26,10 +27,10 @@ class ValoresETaxasController extends Controller
         return view('config.modal.valores_e_taxas_create');
     }
 
-    public function store(Request $request)
+    public function store(ValidacaoTaxaRequest $request)
     {
         ValoresETaxas::create($request->all());
 
-        return redirect()->route('config.valores_e_taxas.index');
+        return redirect()->route('config.valores_e_taxas.index')->with('success', 'Nova Taxa Cadastrada com Sucesso!');
     }
 }

@@ -2,6 +2,20 @@
 @section('title', 'Valores e Taxas')
 @section('content')
     <div class="container mt-5">
+{{--        @if ($errors->any())--}}
+{{--            <ul>--}}
+{{--                @foreach($errors->all() as $error)--}}
+{{--                    <div class="alert alert-danger" role="alert">--}}
+{{--                        {{ $error }}--}}
+{{--                    </div>--}}
+{{--                @endforeach--}}
+{{--            </ul>--}}
+{{--        @endif--}}
+{{--        @if(session()->has('success'))--}}
+{{--            <div class="alert alert-success" role="alert">--}}
+{{--                {{ session('success') }}--}}
+{{--            </div>--}}
+{{--        @endif--}}
         <div class="row">
             <div class="col-md-12 mb-4">
                 <div class="card">
