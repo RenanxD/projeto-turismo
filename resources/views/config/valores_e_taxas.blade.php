@@ -79,6 +79,7 @@
                                     <th>Permanência Mínima</th>
                                     <th>Valor Diário Adicional</th>
                                     <th>Situação</th>
+                                    <th>Ações</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -96,6 +97,12 @@
                                                 Inativa
                                             @endif
                                         </td>
+                                        <td>
+                                            <button type="button" data-toggle="modal" data-target="#modal-edit{{ $taxa->id }}">
+                                                Editar
+                                            </button>
+                                        </td>
+{{--                                        <a href="{{ route('modal.valores_e_taxas_edit', $taxa->id) }}">Editar</a>--}}
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -111,4 +118,5 @@
         </div>
     </div>
     @include('config.modal.valores_e_taxas_create')
+    @include('config.modal.valores_e_taxas_edit')
 @endsection

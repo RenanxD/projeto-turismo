@@ -33,4 +33,9 @@ class ValoresETaxasController extends Controller
 
         return redirect()->route('config.valores_e_taxas.index')->with('success', 'Nova Taxa Cadastrada com Sucesso!');
     }
+
+    public function edit(string $id)
+    {
+        dd($id);
+    }
 }

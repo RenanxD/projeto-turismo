@@ -34,13 +34,14 @@ Route::get('/usuarios', [UsuariosController::class, 'index'])->name('usuarios.in
 Route::get('/isencoes', [IsencoesController::class, 'index'])->name('isencoes.index');
 Route::get('/atividades', [AtividadesController::class, 'index'])->name('atividades.index');
 Route::get('/comprovantes', [ComprovantesController::class, 'index'])->name('comprovantes.index');
-Route::get('/config', [ConfiguracoesController::class, 'index'])->name('config.index');
 Route::get('/validacoes', [ValidacoesController::class, 'index'])->name('validacoes.index');
 Route::get('/pagamentos', [PagamentosController::class, 'index'])->name('pagamentos.index');
 
+Route::get('/config', [ConfiguracoesController::class, 'index'])->name('config.index');
 Route::get('/config/usuarios', [ConfigUsuariosController::class, 'index'])->name('config.usuarios.index');
 Route::get('/config/valoresetaxas', [ValoresETaxasController::class, 'index'])->name('config.valores_e_taxas.index');
 Route::get('/config/valoresetaxas/create', [ValoresETaxasController::class, 'create'])->name('config.modal.valores_e_taxas_create');
-Route::post('/config/valoresetaxas', [ValoresETaxasController::class, 'store'])->name('config.modal.valores_e_taxas.store');
+Route::post('/config/valoresetaxas', [ValoresETaxasController::class, 'store'])->name('config.modal.valores_e_taxas_create.store');
+Route::get('/config/valoresetaxas/{id}/edit', [ValoresETaxasController::class, 'edit'])->name('config.modal.valores_e_taxas_edit');
 
 require __DIR__.'/auth.php';
