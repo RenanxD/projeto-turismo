@@ -134,3 +134,7 @@
     text-decoration: none;
     color: inherit;
 }
+
+.blocked-label {
+    cursor: not-allowed;
+}

@@ -1,9 +1,9 @@
-<form action="{{ route('config.modal.valores_e_taxas_create.store') }}" method="POST" enctype="multipart/form-data">
-    <div class="modal fade" id="modal-edit" tabindex="-1" role="dialog" aria-hidden="true">
+<form action="{{ route('taxas.store') }}" method="POST" enctype="multipart/form-data">
+    <div class="modal fade" id="modal-create" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Editar Taxa</h5>
+                    <h5 class="modal-title">Cadastrar Nova Taxa</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -12,7 +12,7 @@
                     @csrf()
                     <div class="form-group">
                         <label for="descricao">Descrição</label>
-                        <input type="text" class="form-control" name="descricao" value="{{ $taxa->descricao }}" placeholder="Descrição">
+                        <input type="text" class="form-control" name="descricao" placeholder="Descrição">
                     </div>
                     <div class="form-group">
                         <label for="valor">Valor</label>
@@ -20,15 +20,17 @@
                     </div>
                     <div class="form-group">
                         <label for="taxa_perm_minima">Permanência mínima</label>
-                        <input type="text" class="form-control" name="taxa_perm_minima" value="{{ $taxa->taxa_perm_minima }}" placeholder="Permanência mínima">
+                        <input type="text" class="form-control" name="taxa_perm_minima"
+                               placeholder="Permanência mínima">
                     </div>
                     <div class="form-group">
                         <label for="taxa_vlr_adicional">Valor Adicional</label>
-                        <input type="text" class="form-control" name="taxa_vlr_adicional" value="{{ $taxa->taxa_vlr_adicional }}" placeholder="Valor Adicional">
+                        <input type="text" class="form-control" name="taxa_vlr_adicional" placeholder="Valor Adicional">
                     </div>
                     <div class="form-group">
                         <label for="taxa_perm_dia_adicional">Permanência mínima dias adicionais</label>
-                        <input type="text" class="form-control" name="taxa_perm_dia_adicional" value="{{ $taxa->taxa_perm_dia_adicional }}" placeholder="Permanência mínima dias adicionais">
+                        <input type="text" class="form-control" name="taxa_perm_dia_adicional"
+                               placeholder="Permanência mínima dias adicionais">
                     </div>
                     <div class="form-group">
                         <fieldset>
@@ -54,4 +56,3 @@
         </div>
     </div>
 </form>
-

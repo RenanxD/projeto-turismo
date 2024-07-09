@@ -12,7 +12,7 @@
                         </a>
                     </div>
                     <div class="quadro-item">
-                        <a href="{{ route('config.valores_e_taxas.index') }}" class="quadro">
+                        <a href="{{ route('taxas.index') }}" class="quadro">
                             <span class="quadro-titulo">Valores e Taxas</span>
                             <span class="quadro-subtitulo">Gerenciamento dos valores e taxas</span>
                         </a>
