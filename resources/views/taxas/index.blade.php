@@ -2,6 +2,15 @@
 @section('title', 'Valores e Taxas')
 @section('content')
     <div class="container mt-5">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         @isset($mensagemSucesso)
             <div class="alert alert-success">
                 {{ $mensagemSucesso }}
@@ -111,7 +120,7 @@
                                             @endif
                                         </td>
                                         <td class="d-flex justify-content-between align-items-center">
-                                            <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#modal-edit{{ $taxa->id }}">
+                                            <button class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#modal-edit{{ $taxa->id }}">
                                                 <i class="fas fa-edit" aria-hidden="true"></i>
                                             </button>
                                             <form action="{{ route('taxas.destroy', $taxa->id) }}" method="POST" class="d-inline">
@@ -123,6 +132,7 @@
                                             </form>
                                         </td>
                                     </tr>
+                                    @include('taxas.edit')
                                 @endforeach
                                 </tbody>
                             </table>
@@ -136,6 +146,5 @@
         </div>
     </div>
     @include('taxas.create')
-    @include('taxas.edit')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 @endsection

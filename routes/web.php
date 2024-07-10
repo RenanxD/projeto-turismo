@@ -41,6 +41,6 @@ Route::get('/config', [ConfiguracoesController::class, 'index'])->name('config.i
 Route::get('/config/usuarios', [ConfigUsuariosController::class, 'index'])->name('config.usuarios.index');
 
 Route::resource('/taxas', ValoresETaxasController::class)
-    ->only(['index', 'store', 'create', 'edit', 'destroy']);
+    ->except(['show']);
 
 require __DIR__.'/auth.php';

@@ -37,16 +37,25 @@ class ValoresETaxasController extends Controller
         return to_route('taxas.index')->with('success', 'Nova Taxa Cadastrada com Sucesso!');
     }
 
-    public function destroy(Request $request)
+    public function destroy(ValoresETaxas $taxa, Request $request)
     {
-        ValoresETaxas::destroy($request->taxa);
+        $taxa->delete();
         $request->session()->flash('mensagem.sucesso', 'Taxa Removida com Sucesso!');
 
         return to_route('taxas.index');
     }
 
-    public function edit(string $id)
+    public function edit(Request $request)
     {
-        dd($id);
+        return view('taxas.edit')->with('taxa', $request);
+    }
+
+    public function update(ValoresETaxas $taxa, Request $request)
+    {
+        $taxa->fill($request->all());
+        $taxa->save();
+
+        return to_route('taxas.index')
+            ->with('mensagem.sucesso', 'Taxa Atualizada com Sucesso!');
     }
 }
