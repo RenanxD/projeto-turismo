@@ -1,4 +1,4 @@
-@extends('templates.template')
+@extends('adminlte::page')
 @section('title', 'Usuários')
 @section('content')
-@endsection
+@stop

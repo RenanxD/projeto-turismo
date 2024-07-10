@@ -1,4 +1,4 @@
-@extends('templates.template')
+@extends('adminlte::page')
 @section('content')
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -86,4 +86,5 @@
         </div>
     </div>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-@endsection
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+@stop

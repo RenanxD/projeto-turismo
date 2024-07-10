@@ -37,8 +37,8 @@ Route::get('/comprovantes', [ComprovantesController::class, 'index'])->name('com
 Route::get('/validacoes', [ValidacoesController::class, 'index'])->name('validacoes.index');
 Route::get('/pagamentos', [PagamentosController::class, 'index'])->name('pagamentos.index');
 
-Route::get('/config', [ConfiguracoesController::class, 'index'])->name('config.index');
-Route::get('/config/usuarios', [ConfigUsuariosController::class, 'index'])->name('config.usuarios.index');
+Route::get('/configuracoes', [ConfiguracoesController::class, 'index'])->name('config.index');
+Route::get('/configuracoes/usuarios', [ConfigUsuariosController::class, 'index'])->name('config.usuarios.index');
 
 Route::resource('/taxas', ValoresETaxasController::class)
     ->except(['show']);

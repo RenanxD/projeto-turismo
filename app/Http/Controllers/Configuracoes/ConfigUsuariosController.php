@@ -9,6 +9,6 @@ class ConfigUsuariosController extends Controller
 {
     public function index()
     {
-        return view('config.usuarios');
+        return view('configuracoes.usuarios');
     }
 }

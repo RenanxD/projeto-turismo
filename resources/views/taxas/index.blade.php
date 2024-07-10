@@ -1,7 +1,7 @@
-@extends('templates.template')
+@extends('adminlte::page')
 @section('title', 'Valores e Taxas')
 @section('content')
-    <div class="container mt-5">
+    <div class="container">
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -147,4 +147,5 @@
     </div>
     @include('taxas.create')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-@endsection
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+@stop
